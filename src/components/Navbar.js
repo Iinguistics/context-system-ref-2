@@ -13,6 +13,7 @@ class Navbar extends Component {
         {(authContext) => (
           <ThemeContext.Consumer>
             {(themeContext) => {
+              const { isAuthenticated, toggleAuth } = authContext;
               const { isLightTheme, light, dark } = themeContext;
               const theme = isLightTheme ? light : dark;
 
@@ -20,6 +21,7 @@ class Navbar extends Component {
                 <>
                   <nav style={{ background: theme.ui, color: theme.color }}>
                     <h1>Context App</h1>
+                    <div>{isAuthenticated ? "Logged in" : "Logged out"}</div>
                     <ul>
                       <li>Home</li>
                       <li>About</li>
