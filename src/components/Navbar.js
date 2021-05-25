@@ -13,7 +13,7 @@ class Navbar extends Component {
         {(authContext) => (
           <ThemeContext.Consumer>
             {(themeContext) => {
-              const { isAuthenticated, toggleAuth } = authContext;
+              const { isAuthenticated } = authContext;
               const { isLightTheme, light, dark } = themeContext;
               const theme = isLightTheme ? light : dark;
 
