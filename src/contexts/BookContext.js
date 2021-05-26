@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const [book, setBook] = useState([
+  const [books, setBooks] = useState([
     { title: "Innumeracy", id: 1 },
     { title: "Number", id: 2 },
     { title: "White Noise", id: 3 },
@@ -12,8 +12,12 @@ const BookContextProvider = (props) => {
     { title: "Extreme Ownership", id: 6 },
   ]);
 
+  const addBook = (value) => {
+    setBooks(...books, value);
+  };
+
   return (
-    <BookContext.Provider value={{ book }}>
+    <BookContext.Provider value={{ books: books, addBook: addBook }}>
       {props.children}
     </BookContext.Provider>
   );

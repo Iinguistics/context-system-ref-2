@@ -49,3 +49,17 @@ nav ul li {
   cursor: pointer;
   font-weight: 700;
 }
+
+.add-book-btn {
+  margin: 10px 35px 70px;
+  background: #252525;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.add-new {
+  margin: 10px 50px 70px;
+  font-weight: 700;
+}
