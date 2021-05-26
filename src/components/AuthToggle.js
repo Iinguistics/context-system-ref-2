@@ -8,7 +8,11 @@ class AuthToggle extends Component {
     console.log(this.context);
     const { toggleAuth } = this.context;
 
-    return <button onClick={toggleAuth}>Toggle Auth</button>;
+    return (
+      <button onClick={toggleAuth} className="toggle-btn">
+        Toggle Auth
+      </button>
+    );
   }
 }
 

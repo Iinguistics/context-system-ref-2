@@ -38,5 +38,14 @@ nav ul li {
 }
 
 .book-list {
-  margin: 90px 50px 50px;
+  margin: 75px 50px 50px;
+}
+
+.toggle-btn {
+  margin: 50px 50px 50px;
+  background: #252525;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
 }

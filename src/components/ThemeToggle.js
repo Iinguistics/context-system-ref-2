@@ -4,7 +4,11 @@ import { ThemeContext } from "../contexts/ThemeContext";
 const ThemeToggle = () => {
   const { toggleTheme } = useContext(ThemeContext);
 
-  return <button onClick={toggleTheme}>Toggle Theme</button>;
+  return (
+    <button onClick={toggleTheme} className="toggle-btn">
+      Toggle Theme
+    </button>
+  );
 };
 
 export default ThemeToggle;
