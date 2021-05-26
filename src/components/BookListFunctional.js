@@ -31,6 +31,7 @@ const BookListFunctional = () => {
   };
   return (
     <>
+      <h1 className="book-list">Your Book List:</h1>
       <div
         className="book-list"
         style={{ color: theme.color, background: theme.ui }}
@@ -38,7 +39,7 @@ const BookListFunctional = () => {
         <ul style={{ background: theme.ui }}>{renderBooks()}</ul>
       </div>
       <div className="add-new">
-        <h5>Add a new book</h5>
+        <h3>Add a new book</h3>
         <label>Title</label>
         <br />
         <input

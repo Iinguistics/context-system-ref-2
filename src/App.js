@@ -15,9 +15,9 @@ function App() {
         <AuthContextProvider>
           <BookContextProvider>
             <NavbarFunctional />
-            <h1 className="book-list">Are recommendations:</h1>
+
             <BookList />
-            <h1 className="book-list">Your Book List:</h1>
+
             <BookListFunctional />
             <ThemeToggle />
             <AuthToggle />
