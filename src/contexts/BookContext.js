@@ -12,8 +12,8 @@ const BookContextProvider = (props) => {
     { title: "Extreme Ownership", id: 6 },
   ]);
 
-  const addBook = (value) => {
-    setBooks(...books, value);
+  const addBook = (title, id) => {
+    setBooks([...books, { title, id }]);
   };
 
   return (

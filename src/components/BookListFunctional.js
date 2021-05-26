@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { BookContext } from "../contexts/BookContext";
 
 const BookListFunctional = () => {
+  const [newBookTitle, setNewBookTitle] = useState("");
+  const [newBookId, setNewBookId] = useState("");
+
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
-  const { books } = useContext(BookContext);
+  const { books, addBook } = useContext(BookContext);
 
   console.log(books);
 
@@ -20,6 +23,12 @@ const BookListFunctional = () => {
       });
     }
   };
+
+  const addNewBook = () => {
+    addBook(newBookTitle, newBookId);
+    setNewBookTitle("");
+    setNewBookId("");
+  };
   return (
     <>
       <div
@@ -29,11 +38,26 @@ const BookListFunctional = () => {
         <ul style={{ background: theme.ui }}>{renderBooks()}</ul>
       </div>
       <div className="add-new">
-        <label>Add a new book</label>
+        <h5>Add a new book</h5>
+        <label>Title</label>
         <br />
-        <input type="text" />
+        <input
+          type="text"
+          onChange={(e) => setNewBookTitle(e.target.value)}
+          value={newBookTitle}
+        />
         <br />
-        <button className="add-book-btn">Add Book</button>
+        <label>Id</label>
+        <br />
+        <input
+          type="text"
+          onChange={(e) => setNewBookId(e.target.value)}
+          value={newBookId}
+        />
+        <br />
+        <button className="add-book-btn" onClick={addNewBook}>
+          Add Book
+        </button>
       </div>
     </>
   );
